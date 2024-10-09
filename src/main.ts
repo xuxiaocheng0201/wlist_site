@@ -1,15 +1,15 @@
 import './style.css';
-import {createBackground} from "./background.ts";
+import {createBackground} from "./background/background.ts";
+import {createFooter} from "./footer/footer.ts";
 
-document.querySelector("#app")!.innerHTML = `
-    <div id="background"></div>
-    <a id="wip">🚧 敬请期待 🚧</a>
-    <div id="footer">
-        <span>当前版本：0.0.1</span>
-        <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备 2024126116号</a>
-    </div>
-`;
+const app = document.getElementById("app")!;
 
-document.addEventListener('DOMContentLoaded', () => {
-    createBackground(document.getElementById('background')!);
-});
+app.innerHTML = `<a id="wip">🚧 敬请期待 🚧</a>`;
+
+const background = document.createElement("div");
+createBackground(background);
+app.appendChild(background);
+
+const footer = document.createElement("div");
+createFooter(footer);
+app.appendChild(footer);

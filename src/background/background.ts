@@ -33,6 +33,7 @@ function do_move(circle: HTMLDivElement) {
 }
 
 export function createBackground(container: Element) {
+    container.id = "background";
     for (let i = 0; i < 5; i++) {
         const circle = document.createElement('div');
         do_move(circle);
