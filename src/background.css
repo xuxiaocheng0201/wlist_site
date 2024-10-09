@@ -1,0 +1,37 @@
+.backgroundCircle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: rgba(255, 165, 0, 0.07);
+    filter: blur(10px);
+    pointer-events: none;
+    will-change: transform, opacity;
+    overflow: hidden;
+    opacity: 0;
+
+    --move-x: 0;
+    --move-y: 0;
+}
+
+.backgroundCircle.fadeIn {
+    opacity: 1;
+    transition: opacity 5s ease-in-out;
+}
+
+.backgroundCircle.fadeOut {
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+}
+
+@keyframes moveBackgroundCircle {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+    100% {
+        transform: translate(-50%, -50%) translate(var(--move-x, 0), var(--move-y, 0));
+    }
+}
+.backgroundCircle.moving {
+    animation: moveBackgroundCircle 10s linear infinite;
+}

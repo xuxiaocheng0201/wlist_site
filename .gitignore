@@ -1,5 +1,10 @@
 /*
 
 !/.gitignore
+!/package.json
+!/package-lock.json
+!/tsconfig.json
 
+!/README.md
+!/index.html
 !/src
