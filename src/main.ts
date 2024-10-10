@@ -1,10 +1,8 @@
-import './style.css';
 import {createBackground} from "./background/background.ts";
 import {createFooter} from "./footer/footer.ts";
+import {createApp} from "./app/app.ts";
 
-const app = document.getElementById("app")!;
-
-app.innerHTML = `<a id="wip">🚧 敬请期待 🚧</a>`;
-
-app.appendChild(createBackground());
-app.appendChild(createFooter());
+const body = document.querySelector("body")!;
+body.appendChild(createApp());
+body.appendChild(createBackground());
+body.appendChild(createFooter());
