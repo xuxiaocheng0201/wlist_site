@@ -6,10 +6,5 @@ const app = document.getElementById("app")!;
 
 app.innerHTML = `<a id="wip">🚧 敬请期待 🚧</a>`;
 
-const background = document.createElement("div");
-createBackground(background);
-app.appendChild(background);
-
-const footer = document.createElement("div");
-createFooter(footer);
-app.appendChild(footer);
+app.appendChild(createBackground());
+app.appendChild(createFooter());
